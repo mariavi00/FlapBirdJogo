@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlapBirdJogo.MainPage">
+
+    <Grid>
+        <Image  x:Name="Fundo"
+                Source="fundo.jpg"
+                Aspect="Fill"/>
+
+        <Image  x:Name="Cano cima"
+                Source=""
+                Aspect="AspectFit"/>
+
+        <Image  x:Name="Cano baixo"
+                Source=""
+                Aspect="AspectFit"/>
+
+        <Image  x:Name="Pássaro"
+                Source=""
+                Aspect="AspectFit"/>
+
+        <Image  x:Name="Chão"
+                Source=""
+                Aspect="AspectFit"/>
+
+        <Frame   x:Name="botoes"
+               Padding="8"
+               WidthRequest="60"
+               BackgroundColor="#dcfce8"
+               CornerRadius="30"
+               Margin="15,200,10,200"
+               HorizontalOptions="End"
+               VerticalOptions="Center"> 
+
+        </Frame>
+    </Grid>
+
+</ContentPage>

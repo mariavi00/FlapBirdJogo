@@ -1,39 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlapBirdJogo.MainPage">
+             x:Class="FlapBirdJogo.MainPage"
+             Shell.NavBarIsVisible="False">
 
-    <Grid>
-        <Image  x:Name="Fundo"
-                Source="fundo.jpg"
-                Aspect="Fill"/>
 
-        <Image  x:Name="Cano cima"
-                Source=""
-                Aspect="AspectFit"/>
+        <Grid>
+                <Image x:Name="ImagemFundo"
+                       Source="fundo.jpg"
+                       Aspect="Fill"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Fill"/>
 
-        <Image  x:Name="Cano baixo"
-                Source=""
-                Aspect="AspectFit"/>
+                <Image x:Name="ImagemFirebird"
+                       Source="passaro.png"
+                       HorizontalOptions="Start"
+                       HeightRequest="70"
+                       WidthRequest="70"/>
 
-        <Image  x:Name="Pássaro"
-                Source=""
-                Aspect="AspectFit"/>
+                <Image x:Name="ImagemCanoCima"
+                       Source="canocima.png"
+                       HorizontalOptions="End"
+                       VerticalOptions="Start"
+                       WidthRequest="350"
+                       HeightRequest="350"/>
 
-        <Image  x:Name="Chão"
-                Source=""
-                Aspect="AspectFit"/>
+                <Image x:Name="ImagemCanoBaixo"
+                       Source="canobaixo.png"
+                       HorizontalOptions="End"
+                       VerticalOptions="End"
+                       WidthRequest="350"
+                       HeightRequest="350"/>
 
-        <Frame   x:Name="botoes"
-               Padding="8"
-               WidthRequest="60"
-               BackgroundColor="#dcfce8"
-               CornerRadius="30"
-               Margin="15,200,10,200"
-               HorizontalOptions="End"
-               VerticalOptions="Center"> 
+                <Image x:Name="ImagemChao"
+                       Source="chao.png"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="End"/>
 
-        </Frame>
-    </Grid>
+
+
+        </Grid>
 
 </ContentPage>

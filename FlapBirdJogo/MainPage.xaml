@@ -38,14 +38,14 @@
               <Frame x:Name="frameGameOver"
                      BackgroundColor="#fff9e8"
                      HorizontalOptions="Fill"
-                     VerticalOptions="Fill"
-                     WidthRequest="150"
-                     HeightRequest="150">
-              <Frame.GestureRecognizers>
-                     <TapGestureRecognizer Tapped="GameOverClicado"/>            
-              </Frame.GestureRecognizers>
+                     VerticalOptions="Fill">
+                     <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GameOverClicado"/>
+                     </Frame.GestureRecognizers>
 
-                     <Image Source="tap.png"/>
+                     <Image Source="tap.png"
+                            WidthRequest="150"
+                            HeightRequest="150"/>
 
               </Frame>
 

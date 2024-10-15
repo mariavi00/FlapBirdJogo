@@ -2,16 +2,16 @@
 
 public partial class MainPage : ContentPage
 {
-	const int gravidade=30;
-	const int tempoEntreFrames=50;
-	bool estaMorto=true;
-	double larguraJanela=0;
-	double alturaJanela=0;
-	int velocidade=20;
-	const int maxTempoPulando=3;
-	int tempoPulando=0;
-	bool estaPulando=false;
-	const int forcaPulo=60;
+	const int gravidade = 10;
+	const int tempoEntreFrames = 25;
+	bool estaMorto = true;
+	double larguraJanela = 0;
+	double alturaJanela = 0;
+	int velocidade = 10;
+	const int maxTempoPulando = 3;
+	int tempoPulando = 0;
+	bool estaPulando = false;
+	const int forcaPulo = 30;
 
 	public MainPage()
 	{
@@ -21,44 +21,45 @@ public partial class MainPage : ContentPage
 	protected override void OnSizeAllocated(double w, double h)
 	{
 		base.OnSizeAllocated(w, h);
-		larguraJanela=w;
-		alturaJanela=h;
+		larguraJanela = w;
+		alturaJanela = h;
 	}
 
 	void GerenciaCanos()
 	{
-		ImagemCanoCima.TranslationX-=velocidade;
-		ImagemCanoBaixo.TranslationX-=velocidade;
+		ImagemCanoCima.TranslationX -= velocidade;
+		ImagemCanoBaixo.TranslationX -= velocidade;
 
-		if(ImagemCanoBaixo.TranslationX<-larguraJanela)
+		if (ImagemCanoBaixo.TranslationX < -larguraJanela)
 		{
-			ImagemCanoBaixo.TranslationX=100;
-			ImagemCanoCima.TranslationX=100;
+			ImagemCanoBaixo.TranslationX = 100;
+			ImagemCanoCima.TranslationX = 100;
 		}
 	}
 	void AplicaPulo()
 	{
-		ImagemFirebird.TranslationY-=forcaPulo;
+		ImagemFirebird.TranslationY -= forcaPulo;
 		tempoPulando++;
-		if(tempoPulando>=maxTempoPulando)
+		if (tempoPulando >= maxTempoPulando)
 		{
-			estaPulando=false;
-			tempoPulando=0;
+			estaPulando = false;
+			tempoPulando = 0;
 		}
 	}
 	async Task Desenhar()
 	{
-		while(!estaMorto)
+		while (!estaMorto)
 		{
-			if(estaPulando)
-			AplicaPulo();
-		else
-			AplicaGravidade();
+			if (estaPulando)
+				AplicaPulo();
+			else
+				AplicaGravidade();
+
 			GerenciaCanos();
-			if(VerificaColisao())
+			if (VerificaColisao())
 			{
-				estaMorto=true;
-				frameGameOver.IsVisible=true;
+				estaMorto = true;
+				frameGameOver.IsVisible = true;
 				break;
 			}
 			await Task.Delay(tempoEntreFrames);
@@ -66,29 +67,29 @@ public partial class MainPage : ContentPage
 	}
 	void AplicaGravidade()
 	{
-		ImagemFirebird.TranslationY+=gravidade;
+		ImagemFirebird.TranslationY += gravidade;
 	}
 	bool VerificaColisaoTeto()
 	{
-		var minY=-alturaJanela/2;
-		if (ImagemFirebird.TranslationY<=minY)
+		var minY = -alturaJanela / 2;
+		if (ImagemFirebird.TranslationY <= minY)
 			return true;
 		else
 			return false;
 	}
 	bool VerificaColisaoChao()
 	{
-		var maxY = alturaJanela/2 - ImagemChao.HeightRequest;
-		if (ImagemFirebird.TranslationY>= maxY)
+		var maxY = alturaJanela / 2 - ImagemChao.HeightRequest;
+		if (ImagemFirebird.TranslationY >= maxY)
 			return true;
 		else
 			return false;
 	}
 	bool VerificaColisao()
 	{
-		if(!estaMorto)
+		if (!estaMorto)
 		{
-			if(VerificaColisaoTeto()|| VerificaColisaoChao())
+			if (VerificaColisaoTeto() || VerificaColisaoChao())
 			{
 				return true;
 			}
@@ -97,14 +98,18 @@ public partial class MainPage : ContentPage
 	}
 	void GameOverClicado(object s, TappedEventArgs a)
 	{
-		frameGameOver.IsVisible=false;
+		frameGameOver.IsVisible = false;
 		Inicializar();
 		Desenhar();
 	}
+	void GridClicado(object s, TappedEventArgs a)
+	{
+		estaPulando=true;
+	}
 	void Inicializar()
 	{
-		estaMorto=false;
-		ImagemFirebird.TranslationY=0;
+		estaMorto = false;
+		ImagemFirebird.TranslationY = 0;
 	}
 }
 

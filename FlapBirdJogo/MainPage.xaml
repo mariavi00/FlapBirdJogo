@@ -6,6 +6,9 @@
 
 
        <Grid>
+              <Grid.GestureRecognizers>
+                     <TapGestureRecognizer Tapped="GridClicado"/>
+              </Grid.GestureRecognizers>
               <Image x:Name="ImagemFundo"
                      Source="fundo.jpg"
                      Aspect="Fill"

@@ -33,10 +33,11 @@
               <Image x:Name="ImagemChao"
                      Source="chao.png"
                      HorizontalOptions="Fill"
-                     VerticalOptions="End"/>
+                     VerticalOptions="End"
+                     HeightRequest="120"/>
 
               <Frame x:Name="frameGameOver"
-                     BackgroundColor="#fff9e8"
+                     BackgroundColor="Transparent"
                      HorizontalOptions="Fill"
                      VerticalOptions="Fill">
                      <Frame.GestureRecognizers>

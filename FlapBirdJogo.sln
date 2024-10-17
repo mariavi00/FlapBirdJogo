@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlapBirdJogo", "FlapBirdJogo\FlapBirdJogo.csproj", "{EF4C5F0B-AFD8-4894-A249-9B06EC03DC14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlapBirdJogo", "FlapBirdJogo.csproj", "{61F5F161-E565-462C-B40D-9FD01ED63416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF4C5F0B-AFD8-4894-A249-9B06EC03DC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF4C5F0B-AFD8-4894-A249-9B06EC03DC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF4C5F0B-AFD8-4894-A249-9B06EC03DC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF4C5F0B-AFD8-4894-A249-9B06EC03DC14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F5F161-E565-462C-B40D-9FD01ED63416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F5F161-E565-462C-B40D-9FD01ED63416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F5F161-E565-462C-B40D-9FD01ED63416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F5F161-E565-462C-B40D-9FD01ED63416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DC75333D-8906-40BD-817D-55ACF33E3119}
+		SolutionGuid = {3E25B5BF-B3E7-44FB-BF3F-034FC841D994}
 	EndGlobalSection
 EndGlobal

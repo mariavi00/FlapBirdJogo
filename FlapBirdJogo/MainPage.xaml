@@ -1,58 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlapBirdJogo.MainPage"
-             Shell.NavBarIsVisible="False">
+<ContentPage
+    x:Class="FlapBirdJogo.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False">
 
 
-       <Grid>
-              <Grid.GestureRecognizers>
-                     <TapGestureRecognizer Tapped="GridClicado"/>
-              </Grid.GestureRecognizers>
-              <Image x:Name="ImagemFundo"
-                     Source="fundo.jpg"
-                     Aspect="Fill"
-                     HorizontalOptions="Fill"
-                     VerticalOptions="Fill"/>
+    <Grid>
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="GridClicado" />
+        </Grid.GestureRecognizers>
+        <Image
+            x:Name="ImagemFundo"
+            Aspect="Fill"
+            HorizontalOptions="Fill"
+            Source="fundo.jpg"
+            VerticalOptions="Fill" />
 
-              <Image x:Name="ImagemFirebird"
-                     Source="passaro.png"
-                     HorizontalOptions="Start"
-                     HeightRequest="70"
-                     WidthRequest="70"/>
+        <Image
+            x:Name="ImagemFirebird"
+            HeightRequest="70"
+            HorizontalOptions="Start"
+            Source="passaro.png"
+            WidthRequest="70" />
 
-              <Image x:Name="ImagemCanoCima"
-                     Source="canocima.png"
-                     HorizontalOptions="End"
-                     VerticalOptions="Start"
-                     HeightRequest="350"/>
+        <Image
+            x:Name="ImagemCanoCima"
+            HeightRequest="350"
+            HorizontalOptions="End"
+            Source="canocima.png"
+            VerticalOptions="Start" />
 
-              <Image x:Name="ImagemCanoBaixo"
-                     Source="canobaixo.png"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"
-                     HeightRequest="350"/>
+        <Image
+            x:Name="ImagemCanoBaixo"
+            HeightRequest="350"
+            HorizontalOptions="End"
+            Source="canobaixo.png"
+            VerticalOptions="End" />
 
-              <Image x:Name="ImagemChao"
-                     Source="chao.png"
-                     HorizontalOptions="Fill"
-                     VerticalOptions="End"
-                     HeightRequest="120"/>
+        <Image
+            x:Name="ImagemChao"
+            HeightRequest="120"
+            HorizontalOptions="Fill"
+            Source="chao.png"
+            VerticalOptions="End" />
 
-              <Frame x:Name="frameGameOver"
-                     BackgroundColor="Transparent"
-                     HorizontalOptions="Fill"
-                     VerticalOptions="Fill">
-                     <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="GameOverClicado"/>
-                     </Frame.GestureRecognizers>
+        <Label
+            x:Name="labelPontuacao"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="10,0"
+            Padding="5"
+            BackgroundColor="#FFF1DCDC"/>
 
-                     <Image Source="tap.png"
-                            WidthRequest="150"
-                            HeightRequest="150"/>
+        <Frame
+            x:Name="frameGameOver"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GameOverClicado" />
+            </Frame.GestureRecognizers>
 
-              </Frame>
+            <Image
+                HeightRequest="150"
+                Source="tap.png"
+                WidthRequest="150" />
 
-       </Grid>
+        </Frame>
+
+    </Grid>
 
 </ContentPage>

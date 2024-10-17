@@ -12,6 +12,8 @@ public partial class MainPage : ContentPage
 	int tempoPulando = 0;
 	bool estaPulando = false;
 	const int forcaPulo = 30;
+	const int aberturaMinima =100;
+	int pontuacao=0;
 
 	public MainPage()
 	{
@@ -30,10 +32,16 @@ public partial class MainPage : ContentPage
 		ImagemCanoCima.TranslationX -= velocidade;
 		ImagemCanoBaixo.TranslationX -= velocidade;
 
-		if (ImagemCanoBaixo.TranslationX < -larguraJanela)
+		if (ImagemCanoBaixo.TranslationX <= -larguraJanela)
 		{
 			ImagemCanoBaixo.TranslationX = 100;
 			ImagemCanoCima.TranslationX = 100;
+			var alturaMax=-150;
+			var alturaMin=-ImagemCanoBaixo.HeightRequest;
+			ImagemCanoCima.TranslationY=Random.Shared.Next((int)alturaMin, (int)alturaMax);
+			ImagemCanoBaixo.TranslationY=ImagemCanoCima.TranslationY+aberturaMinima+ImagemCanoBaixo.HeightRequest;
+			pontuacao++;
+			
 		}
 	}
 	void AplicaPulo()

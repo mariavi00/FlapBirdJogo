@@ -12,7 +12,7 @@ public partial class MainPage : ContentPage
 	int tempoPulando = 0;
 	bool estaPulando = false;
 	const int forcaPulo = 30;
-	const int aberturaMinima =100;
+	const int aberturaMinima =150;
 	int pontuacao=0;
 
 	public MainPage()
@@ -36,12 +36,12 @@ public partial class MainPage : ContentPage
 		{
 			ImagemCanoBaixo.TranslationX = 100;
 			ImagemCanoCima.TranslationX = 100;
-			var alturaMax=-150;
+			var alturaMax=-50;
 			var alturaMin=-ImagemCanoBaixo.HeightRequest;
 			ImagemCanoCima.TranslationY=Random.Shared.Next((int)alturaMin, (int)alturaMax);
 			ImagemCanoBaixo.TranslationY=ImagemCanoCima.TranslationY+aberturaMinima+ImagemCanoBaixo.HeightRequest;
 			pontuacao++;
-			
+			labelPontuacao.Text="Pontuação:"+pontuacao.ToString("D3");
 		}
 	}
 	void AplicaPulo()

@@ -26,16 +26,20 @@
 
         <Image
             x:Name="ImagemCanoCima"
-            HeightRequest="350"
+            HeightRequest="600"
+            WidthRequest="250"
             HorizontalOptions="End"
             Source="canocima.png"
-            VerticalOptions="Start" />
+            VerticalOptions="Start"
+            BackgroundColor="Red"/>
 
         <Image
             x:Name="ImagemCanoBaixo"
-            HeightRequest="350"
+            HeightRequest="600"
+            WidthRequest="250"
             HorizontalOptions="End"
             Source="canobaixo.png"
+            BackgroundColor="Red"
             VerticalOptions="End" />
 
         <Image
@@ -49,9 +53,9 @@
             x:Name="labelPontuacao"
             HorizontalOptions="Start"
             VerticalOptions="Start"
-            Margin="10,0"
+            Margin="10,10"
             Padding="5"
-            BackgroundColor="#FFF1DCDC"/>
+            TextColor="White"/>
 
         <Frame
             x:Name="frameGameOver"

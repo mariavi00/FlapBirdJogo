@@ -12,8 +12,8 @@ public partial class MainPage : ContentPage
 	int tempoPulando = 0;
 	bool estaPulando = false;
 	const int forcaPulo = 30;
-	const int aberturaMinima =150;
-	int pontuacao=0;
+	const int aberturaMinima = 150;
+	int pontuacao = 0;
 
 	public MainPage()
 	{
@@ -48,12 +48,12 @@ public partial class MainPage : ContentPage
 			ImagemCanoCima.TranslationX = ImagemCanoCima.WidthRequest;
 			var alturaMax = -ImagemCanoCima.HeightRequest + 200;
 			var alturaMin = -ImagemCanoCima.HeightRequest;
-			ImagemCanoCima.TranslationY=Random.Shared.Next((int)alturaMin, (int)alturaMax);
-			ImagemCanoBaixo.TranslationY=ImagemCanoCima.TranslationY+aberturaMinima+ImagemCanoBaixo.HeightRequest;
+			ImagemCanoCima.TranslationY = Random.Shared.Next((int)alturaMin, (int)alturaMax);
+			ImagemCanoBaixo.TranslationY = ImagemCanoCima.TranslationY + aberturaMinima + ImagemCanoBaixo.HeightRequest;
 			pontuacao++;
-			labelPontuacao.Text="Pontuação:"+pontuacao.ToString("D3");
-			if (pontuacao%2==0)
-			velocidade++;
+			labelPontuacao.Text = "Pontuação:" + pontuacao.ToString("D3");
+			if (pontuacao % 2 == 0)
+				velocidade++;
 		}
 	}
 	void AplicaPulo()
@@ -108,7 +108,7 @@ public partial class MainPage : ContentPage
 	bool VerificaColisaoCanoCima()
 	{
 		var posHImagemFirebird = (larguraJanela / 2) - (ImagemFirebird.WidthRequest / 2);
-		var posVImagemFirebird = (AlturaJanela / 2) - (ImagemFirebird.HeightRequest / 2) + ImagemFirebird.TranslationY;
+		var posVImagemFirebird = (alturaJanela / 2) - (ImagemFirebird.HeightRequest / 2) + ImagemFirebird.TranslationY;
 		if (posHImagemFirebird >= Math.Abs(ImagemCanoCima.TranslationX) - ImagemCanoCima.WidthRequest &&
 		posHImagemFirebird <= Math.Abs(ImagemChao.TranslationX) + ImagemCanoCima.WidthRequest &&
 		posVImagemFirebird <= ImagemCanoCima.HeightRequest + ImagemCanoCima.TranslationY)
@@ -119,29 +119,27 @@ public partial class MainPage : ContentPage
 	}
 	bool VerificaColisaoCanoBaixo()
 	{
-		var posHImagemFirebird = (larguraJanela / 2) - (ImagemFirebird.WidthRequest / 2);
-		var posVImagemFirebird = (AlturaJanela / 2) + (ImagemFirebird.HeightRequest / 2) + ImagemFirebird.TranslationY;
-		var yMaxCano=ImagemCanoCima.HeightRequest+ImagemCanoCima.TranslationY=aberturaMinima;
+		var posHImagemFirebird = larguraJanela - 50 - ImagemFirebird.WidthRequest / 2;
+		var posVImagemFirebird = (alturaJanela / 2) + (ImagemFirebird.HeightRequest / 2) + ImagemFirebird.TranslationY;
+		var yMaxCano = ImagemCanoCima.HeightRequest + ImagemCanoCima.TranslationY + aberturaMinima;
 		if (posHImagemFirebird >= Math.Abs(ImagemCanoBaixo.TranslationX) - ImagemCanoBaixo.WidthRequest &&
 		posHImagemFirebird <= Math.Abs(ImagemCanoBaixo.TranslationX) + ImagemCanoBaixo.WidthRequest &&
 		posVImagemFirebird >= yMaxCano)
-		{
 			return true;
-		}
 		else
-		{
 			return false;
-		}
 	}
 	bool VerificaColisao()
 	{
 		if (!estaMorto)
-			if (VerificaColisaoTeto() || 
-				VerificaColisaoChao() || 
+		{
+			SoundHelper.Play("morto.wav");
+			if (VerificaColisaoTeto() ||
+				VerificaColisaoChao() ||
 				VerificaColisaoCanoCima() ||
 				VerificaColisaoCanoBaixo())
 				return true;
-			else
+		}
 		return false;
 	}
 	void GameOverClicado(object s, TappedEventArgs a)
@@ -152,8 +150,8 @@ public partial class MainPage : ContentPage
 	}
 	void GridClicado(object s, TappedEventArgs a)
 	{
-		estaPulando=true;
+		estaPulando = true;
 	}
-	
+
 }
 
